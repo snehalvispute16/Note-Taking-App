@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteIt - A Colorful Note Taking App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 30px; /* Increased margin for more spacing */
+            font-size: 16px; /* Increased font size */
+        }
+
+        h1 {
+            color: #e74c3c; /* Red color for NoteIt */
+            text-align: center;
+            margin-bottom: 30px; /* Increased margin */
+            font-family: 'Baloo Tamma 2', cursive; 
+            font-size: 36px; /* Increased font size */
+        }
+
+        p {
+            color: #555;
+            text-align: center;
+            margin-bottom: 40px; /* Increased margin */
+        }
+
+        form {
+            margin-bottom: 40px; /* Increased margin */
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px; /* Increased margin */
+            color: #3498db;
+        }
+
+        input[type="text"] {
+            padding: 15px; /* Increased padding */
+            width: 80%; /* Increased width */
+            border: 1px solid #3498db;
+            border-radius: 8px; /* Increased border radius */
+            margin-bottom: 20px; /* Increased margin */
+            font-size: 16px; /* Increased font size */
+        }
+
+        button {
+            padding: 15px; /* Increased padding */
+            cursor: pointer;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 8px; /* Increased border radius */
+            font-size: 16px; /* Increased font size */
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            margin: 20px 0; /* Increased margin */
+            padding: 20px;
+            border-radius: 8px; /* Increased border radius */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            list-style-type: disc; /* Use bullets for list items */
+            font-size: 16px; /* Increased font size */
+        }
+
+        select {
+            padding: 15px; /* Increased padding */
+            border: 1px solid #3498db;
+            border-radius: 8px; /* Increased border radius */
+            margin-bottom: 20px; /* Increased margin */
+            font-size: 16px; /* Increased font size */
+        }
+    </style>
+</head>
+<body>
+    <h1>NoteIt</h1>
+    <p>A Note Taking App</p>
+    
+    <form action="/" method="GET">
+        <label for="note">Add a Note:</label>
+        <input type="text" id="note" name="note" required>
+        
+        <label for="category">Select Category:</label>
+        <select id="category" name="category">
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+            <option value="study">Study</option>
+            <!-- Add more categories as needed -->
+        </select>
+        
+        <button type="submit">Add Note</button>
+    </form>
+
+    <ul>
+        {% for note in notes %}
+            <li>{{ note }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
