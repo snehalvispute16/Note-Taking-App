@@ -54,8 +54,7 @@ python app.py
 
 - Open http://127.0.0.1:5000 in your web browser to access the Note-Taking-App.
 - Add and categorize  notes
-
-
+<br>
 
 ## License
 
