@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoteIt - A Colorful Note Taking App</title>
+    <title>NoteIt - A Note Taking App</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -84,7 +84,7 @@
     <h1>NoteIt</h1>
     <p>A Note Taking App</p>
     
-    <form action="/" method="GET">
+    <form action="/" method="POST">
         <label for="note">Add a Note:</label>
         <input type="text" id="note" name="note" required>
         
@@ -93,7 +93,7 @@
             <option value="personal">Personal</option>
             <option value="work">Work</option>
             <option value="study">Study</option>
-            <!-- Add more categories as needed -->
+            
         </select>
         
         <button type="submit">Add Note</button>
@@ -101,8 +101,12 @@
 
     <ul>
         {% for note in notes %}
-            <li>{{ note }}</li>
+            <li>
+                <strong>Category:</strong> {{ note.category }}<br>
+                <strong>Note:</strong> {{ note.text }}
+            </li>
         {% endfor %}
     </ul>
+        
 </body>
 </html>
